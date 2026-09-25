@@ -16,7 +16,7 @@ const sourceFrameAncestors = {
 const customServices = [
   `https://saeraphinx.dev`,
   `https://*.saeraphinx.dev`,
-  `https://mappingawards.saeraphinx.dev`
+  `https://mappingawards.saeraphinx.dev`,
   `https://sae.sh`,
   `https://*.sae.sh`,
 ]
