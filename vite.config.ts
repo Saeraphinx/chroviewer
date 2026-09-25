@@ -19,6 +19,7 @@ const customServices = [
   `https://mappingawards.saeraphinx.dev`,
   `https://sae.sh`,
   `https://*.sae.sh`,
+  `http://localhost:5173`
 ]
 
 export default defineConfig(({ mode }) => {
