@@ -13,12 +13,20 @@ const sourceFrameAncestors = {
   beatleader: ['https://beatleader.com', 'https://beatleader.xyz'],
 };
 
+const customServices = [
+  `https://saeraphinx.dev`,
+  `https://*.saeraphinx.dev`,
+  `https://mappingawards.saeraphinx.dev`
+  `https://sae.sh`,
+  `https://*.sae.sh`,
+]
+
 export default defineConfig(({ mode }) => {
   const enabledSources = enabledViewerSourcesSchema.parse(loadEnv(mode, process.cwd(), 'VITE_').VITE_ENABLED_SOURCES);
   const securityHeaders = {
     'content-security-policy': `frame-ancestors 'self' ${enabledSources
       .flatMap((source) => sourceFrameAncestors[source])
-      .join(' ')}`,
+      .join(' ')} ${customServices.join(' ')}`,
     'referrer-policy': 'strict-origin-when-cross-origin',
     'x-content-type-options': 'nosniff',
   };
